@@ -1,0 +1,23 @@
+{
+  "name": "article-summarizer",
+  "version": "1.0.0",
+  "description": "Résume un article en 5 bullet points actionnables.",
+  "category": "content",
+  "tags": ["summary", "nlp", "productivity"],
+  "runtime_type": "llm_prompt",
+  "runtime_config": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "system_prompt": "Tu es un éditeur expert qui produit des résumés concis et exploitables.",
+    "user_prompt": "Résume cet article en 5 bullet points actionnables, en {language}:\n\n{article}"
+  },
+  "input_schema": {
+    "article": {"type": "string", "required": true},
+    "language": {"type": "string", "default": "français"}
+  },
+  "output_schema": {
+    "text": "string",
+    "model": "string"
+  },
+  "price_cents": 10
+}

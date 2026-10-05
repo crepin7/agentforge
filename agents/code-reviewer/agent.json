@@ -1,0 +1,23 @@
+{
+  "name": "code-reviewer",
+  "version": "1.0.0",
+  "description": "Analyse un snippet de code et propose des améliorations.",
+  "category": "developer",
+  "tags": ["code", "review", "quality"],
+  "runtime_type": "llm_prompt",
+  "runtime_config": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "system_prompt": "Tu es un senior engineer qui fait des code reviews constructives. Tu identifies les bugs, les problèmes de performance et les opportunités d'amélioration.",
+    "user_prompt": "Review ce code ({language}) :\n\n```{language}\n{code}\n```\n\nDonne : 1) bugs éventuels, 2) problèmes de performance, 3) suggestions d'amélioration."
+  },
+  "input_schema": {
+    "code": {"type": "string", "required": true},
+    "language": {"type": "string", "default": "python"}
+  },
+  "output_schema": {
+    "text": "string",
+    "model": "string"
+  },
+  "price_cents": 15
+}

@@ -1,0 +1,23 @@
+{
+  "name": "weather-reporter",
+  "version": "1.0.0",
+  "description": "Rapport météo d'une ville en langage naturel.",
+  "category": "utility",
+  "tags": ["weather", "report", "llm"],
+  "runtime_type": "llm_prompt",
+  "runtime_config": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "system_prompt": "Tu es un météorologue qui rédige des bulletins clairs et engageants.",
+    "user_prompt": "Rédige un bulletin météo pour la ville de {city} en {language}. Donne la température, les conditions, et des conseils vestimentaires."
+  },
+  "input_schema": {
+    "city": {"type": "string", "required": true},
+    "language": {"type": "string", "default": "français"}
+  },
+  "output_schema": {
+    "text": "string",
+    "model": "string"
+  },
+  "price_cents": 5
+}
